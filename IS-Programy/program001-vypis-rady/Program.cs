@@ -3,9 +3,9 @@ while (again == "a")
 {
     Console.Clear();
     Console.WriteLine("****************************");
-    Console.WriteLine("***** Základní program *****");
+    Console.WriteLine("***** výpis řady *****");
     Console.WriteLine("****************************");
-    Console.WriteLine("******* Tomáš Žižka ********");
+    Console.WriteLine("******* Pavlína Baladová ********");
     Console.WriteLine("****************************");
     Console.WriteLine();
 
@@ -34,6 +34,18 @@ while (again == "a")
     {
         Console.Write("Nezadali jste celé číslo. Zadejte diferenci znovu: ");
     }
+
+    // Výpis vstupních hodnot
+    Console.WriteLine();
+    Console.WriteLine("===============================");
+    Console.WriteLine("Zadali jste tyto hodnoty:");
+    Console.WriteLine("První číslo řady: {0}", first);
+    Console.WriteLine("Poslední číslo řady: {0}", last);
+    Console.WriteLine("Diferenci: {0}", step);
+    Console.WriteLine("===============================");
+    Console.WriteLine("První číslo: {0}; Poslední číslo: {1}; Di nference {2}", first, last, step);
+    Console.WriteLine("===============================");
+    Console.WriteLine();
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a.");
