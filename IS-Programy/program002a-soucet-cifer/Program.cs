@@ -25,10 +25,10 @@ while (again == "a")
         number = -number;
     }
 
-    while () {
+    while (number >= 10) {
         digit = number % 10; // zybtek po dělění 10 nám bude určovat jednotlivé cifry
         number = (number - digit) / 10;
-        Console.Writeline("Digit = {0}", digit);
+        Console.WriteLine("Digit = {0}", digit);
         suma = suma + digit;
     }
     Console.WriteLine("Zbytek = {0}", number);
@@ -38,11 +38,4 @@ while (again == "a")
 
     Console.WriteLine();
     Console.WriteLine("Součet cifer čísla {0} je {1}", numberBackup, suma);
-
-
-    Console.WriteLine();
-    Console.WriteLine("Pro opakování programu stiskněte klávesu a.");
-    again = Console.ReadLine();
-
-
 }
