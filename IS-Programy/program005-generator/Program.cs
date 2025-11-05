@@ -1,4 +1,6 @@
-﻿string again = "a";
+﻿using System.Data.Common;
+
+string again = "a";
 while (again == "a")
 {
     Console.Clear();
@@ -53,9 +55,33 @@ while (again == "a")
     Console.WriteLine("Pseudonáhodná čísla");
     for(int i=0; i < n ; i++)
     {
-        myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound);
+        myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound+1);
         Console.WriteLine("{0}; ",myRandNumbs[i]);
     }
+
+    int sumPositive = 0; //kladná čísla
+    int sumNegative = 0; //záporná čísla
+    int zeros = 0; // nuly
+
+    for (int i = 0; i < n; i++)
+    {
+        myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound + 1); // +1 aby se horní mez mohla vygenerovat
+        Console.WriteLine("{0}; ", myRandNumbs[i]);
+
+        if (myRandNumbs[i] > 0)
+            sumPositive += myRandNumbs[i];
+        else if (myRandNumbs[i] < 0)
+            sumNegative += myRandNumbs[i];
+        else 
+            zeros += myRandNumbs[i];
+    }
+
+    Console.WriteLine("========================================================");
+    Console.WriteLine($"Součet všech kladných čísel: {sumPositive}");
+    Console.WriteLine($"Součet všech záporných čísel: {sumNegative}");
+    Console.WriteLine("========================================================");
+
+
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a.");
