@@ -1,2 +1,95 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+Console.Clear();
+Console.WriteLine("****************************");
+Console.WriteLine("***** Generátor pseudonáhodných čísel *****");
+Console.WriteLine("****************************");
+Console.WriteLine("******* Pavlína Baladová********");
+Console.WriteLine("****************************");
+Console.WriteLine();
+
+// Vstup hodnoty do programu - špatně řešený
+//Console.Write("Zadejte první číslo řady: ");
+//int first = int.Parse(Console.ReadLine());
+
+//Vstup hodnoty do programu - řešený správně
+Console.Write("Zadejte počet generovaných čísel: ");
+int n;
+while (!int.TryParse(Console.ReadLine(), out n))
+ {
+  Console.Write("Nezadali jste celé číslo. Zadejte znovu počet generovaných čísel: ");
+ }
+Console.Write("Zadejte dolní mez: ");
+int lowerBound;
+while (!int.TryParse(Console.ReadLine(), out lowerBound))
+{
+    Console.Write("Nezadali jste celé číslo. Zadejte znovu dolní mez: ");
+}
+
+Console.Write("Zadejte horní mez: ");
+int upperBound;
+while (!int.TryParse(Console.ReadLine(), out upperBound))
+{
+    Console.Write("Nezadali jste celé číslo. Zadejte znovu horní  mez: ");
+}
+
+Console.WriteLine();
+Console.WriteLine("========================================================");
+Console.WriteLine($"Počet generovaných čísel: {n}");
+Console.WriteLine($"Horní mez: {lowerBound}");
+Console.WriteLine($"Horní mez: {upperBound}");
+Console.WriteLine("Počet čísel: {0}; Dolní mez: {1}; Horní mez: {2}", n, lowerBound, upperBound);
+Console.WriteLine("========================================================");
+
+//deklarace pole
+int[] myRandNumbs = new int[n];
+
+//Random myRandNumb = new Random(50)// generování stejných čísel při stejném vstup
+Random myRandNumb = new Random();
+
+// záporné kladné nuly
+int negativeNumbers = 0; // resetování záporných čísel
+int positiveNumbers = 0; // resetování kladných čísel
+int zeroNumbers = 0; // resetování nulových čísel
+
+// sudá lichá čísla
+int evenNumbers = 0; // resetování sudých čísel
+int oddNumbers = 0; // resetování lichých čísel
+    
+Console.WriteLine();
+Console.Write("========================================================");
+Console.WriteLine("Pseudonáhodná čísla");
+for(int i=0; i < n ; i++)
+{
+    myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound);
+    Console.WriteLine("{0}; ", myRandNumbs[i]);
+        
+    int value = myRandNumbs[i];
+
+    // positive or negative - pár else ifs :P pro efektivitu 
+    if (value < 0)
+    {
+        negativeNumbers++;
+    }
+    else if (value > 0)
+    {
+        positiveNumbers++;
+    }
+    else
+    {
+        zeroNumbers++;
+    }
+
+    // sudé nebo liché a 0 je sudé :PPP
+    if (value % 2 == 0)
+    {
+        evenNumbers++;
+    }
+    else
+    {
+        oddNumbers++;
+    }
+    }
+
+
+
+
