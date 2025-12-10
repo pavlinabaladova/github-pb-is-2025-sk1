@@ -19,7 +19,7 @@ while (again == "a")
         println("Zadejte počet členů řady pro výpočet čísla PI:");
         scanf("%d", &n);
 
-        for (int i = 0, k < n; k++)
+        for (int i = 0; k < n; k++)
         {
             cast = carka / (2 * k + 1);
             pi = pi + cast;
